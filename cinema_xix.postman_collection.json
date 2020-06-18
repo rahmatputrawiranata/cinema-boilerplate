@@ -1,0 +1,2511 @@
+{
+	"info": {
+		"_postman_id": "2439b59a-eafb-4cbf-945e-9767444165c3",
+		"name": "cinema_xix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "qwe",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "asd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/auth/logout?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout 401",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/auth/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "branch",
+			"item": [
+				{
+					"name": "view branch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/branches?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view branch 401",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/branches",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view branch 403",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/branches?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mataram",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create branch 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mataram",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create branch 403",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create branch 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Mataram",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit branch 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Mataram",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit branch 403",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches/1?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit branch 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete branch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete branch 401",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete branch 403",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/branches/1?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branches",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "studio",
+			"item": [
+				{
+					"name": "view studio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/studios?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view studio 401",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/studios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view studio 403",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/studios?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create studio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Studio 1",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "basic_price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "additional_friday_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "additional_saturday_price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "additional_sunday_price",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create studio 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Studio 1",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "basic_price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "additional_friday_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "additional_saturday_price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "additional_sunday_price",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create studio 403",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Studio 1",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "basic_price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "additional_friday_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "additional_saturday_price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "additional_sunday_price",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create studio 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "-10",
+									"type": "text"
+								},
+								{
+									"key": "basic_price",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "additional_friday_price",
+									"value": "-1",
+									"type": "text"
+								},
+								{
+									"key": "additional_saturday_price",
+									"value": "10000000",
+									"type": "text"
+								},
+								{
+									"key": "additional_sunday_price",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update studio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Studio 1",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "basic_price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "additional_friday_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "additional_saturday_price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "additional_sunday_price",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update studio 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Studio 1",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "basic_price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "additional_friday_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "additional_saturday_price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "additional_sunday_price",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update studio 403",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Studio 1",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "basic_price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "additional_friday_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "additional_saturday_price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "additional_sunday_price",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios/1?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update studio 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Studio 1",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "basic_price",
+									"value": "-5",
+									"type": "text"
+								},
+								{
+									"key": "additional_friday_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "additional_saturday_price",
+									"value": "-8",
+									"type": "text"
+								},
+								{
+									"key": "additional_sunday_price",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete studio",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete studio 401",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete studio 403",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/studios/1?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"studios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "movie",
+			"item": [
+				{
+					"name": "view movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/movies?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view movie 401",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view movie 403",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/movies?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Perang Bintang",
+									"type": "text"
+								},
+								{
+									"key": "minute_length",
+									"value": "113",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create movie 401",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Perang Bintang",
+									"type": "text"
+								},
+								{
+									"key": "minute_length",
+									"value": "113",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create movie 403",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Perang Bintang",
+									"type": "text"
+								},
+								{
+									"key": "minute_length",
+									"value": "113",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create movie 422",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "minute_length",
+									"value": "99999",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Perang Bintang",
+									"type": "text"
+								},
+								{
+									"key": "minute_length",
+									"value": "113",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit movie 401",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Perang Bintang",
+									"type": "text"
+								},
+								{
+									"key": "minute_length",
+									"value": "113",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit movie 403",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Perang Bintang",
+									"type": "text"
+								},
+								{
+									"key": "minute_length",
+									"value": "113",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies/1?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit movie 422",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "minute_length",
+									"value": "999999",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete movie 401",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete movie 403",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/movies/1?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "schedule",
+			"item": [
+				{
+					"name": "view schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/schedules?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view schedule 401",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/schedules",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view schedule 403",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/schedules?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-01T14:02:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-01T14:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "jadwal sudah ada yang terbentuk di start - end yang ada di studio yang sama"
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-01T14:02:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule 403",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-01T14:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						},
+						"description": "jadwal sudah ada yang terbentuk di start - end yang ada di studio yang sama"
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "a-02-asd:02:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update schedule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-01T14:24:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update schedule 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-01T14:04:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "jadwal sudah ada yang terbentuk di start - end yang ada di studio yang sama"
+					},
+					"response": []
+				},
+				{
+					"name": "update schedule 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-01T14:24:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update schedule 403",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-01T14:24:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules/1?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update schedule 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "studio_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movie_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2018-02-asdasd:24:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete schedule 401",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete schedule 403",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedules/1?token={{user_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedules",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{user_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user view schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/view-schedule?token={{token}}&branch_id=1&date=2020-06-20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"view-schedule"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "branch_id",
+									"value": "1"
+								},
+								{
+									"key": "date",
+									"value": "2020-06-20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user view schedule 401",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/available-schedules?branch_id=1&date=2018-04-19",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"available-schedules"
+							],
+							"query": [
+								{
+									"key": "branch_id",
+									"value": "1"
+								},
+								{
+									"key": "date",
+									"value": "2018-04-19"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
